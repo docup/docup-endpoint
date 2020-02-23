@@ -39,3 +39,11 @@ openapi.yamlの以下の箇所を適宜修正します。
 ```shell script
 make endpoints/dev/deploy
 ```
+
+## Construct ESP
+```shell script
+gcloud run services update docup-endpoint \
+   --set-env-vars ENDPOINTS_SERVICE_NAME=docup-endpoint-em2dgo5qcq-an.a.run.app \
+   --platform=managed \
+   --project docup-269111
+```
