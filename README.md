@@ -34,3 +34,8 @@ openapi.yamlの以下の箇所を適宜修正します。
 `x-google-backend.address:` backendとなるapp engineのURLを記載します。例：`https://api-dot-docup-269111.appspot.com`
 
 `x-google-backend.jwt_audience:` [認証情報](https://console.cloud.google.com/apis/credentials?hl=ja&organizationId=32394268505&orgonly=true&project=docup-269111&supportedpurview=project,organizationId,folder)にてIAP の設定時に作成した OAuth クライアント ID に置き換えます。例：`965242496332-f1epc5enp7ji73e6hrq0dphc5sshlmqj.apps.googleusercontent.com`
+
+## Deploy endpoint
+```shell script
+make endpoints/dev/deploy
+```

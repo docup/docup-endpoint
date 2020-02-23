@@ -1,3 +1,3 @@
 .PHONY: endpoints/dev/deploy
 endpoints/dev/deploy:
-	gcloud endpoints services deploy --project=soilworks-expt-01-266813 openapi-appengine.yaml
+	gcloud endpoints services deploy --project=docup-269111 openapi.yaml
