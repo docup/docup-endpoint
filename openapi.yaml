@@ -3,14 +3,14 @@ info:
   title: Cloud Endpoints + App Engine
   description: Sample API on Cloud Endpoints with an App Engine backend
   version: 1.0.0
-host: endpoints-runtime-serverless-g7vn673b6q-an.a.run.app
+host: docup-endpoint-em2dgo5qcq-an.a.run.app
 schemes:
   - https
 produces:
   - application/json
 x-google-backend:
-  address: https://api-dot-soilworks-expt-01-266813.appspot.com
-  jwt_audience: 580669126921-um0j3d4nfqf0o5ogg7a0phgstmck7fql.apps.googleusercontent.com
+  address: https://api-dot-docup-269111.appspot.com
+  jwt_audience: 965242496332-f1epc5enp7ji73e6hrq0dphc5sshlmqj.apps.googleusercontent.com
 paths:
   /guest:
     get:
@@ -49,9 +49,9 @@ securityDefinitions:
     flow: "implicit"
     type: "oauth2"
     # Replace YOUR-PROJECT-ID with your project ID
-    x-google-issuer: "https://securetoken.google.com/soilworks-expt-01-266813"
+    x-google-issuer: "https://securetoken.google.com/docup-269111"
     x-google-jwks_uri: "https://www.googleapis.com/service_accounts/v1/metadata/x509/securetoken@system.gserviceaccount.com"
-    x-google-audiences: "soilworks-expt-01-266813"
+    x-google-audiences: "docup-269111"
   service_account_appengine:  # this is for the authentication for a request from cloud tasks.
     authorizationUrl: ""
     flow: "implicit"
