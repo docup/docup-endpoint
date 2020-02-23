@@ -1,0 +1,63 @@
+swagger: '2.0'
+info:
+  title: Cloud Endpoints + App Engine
+  description: Sample API on Cloud Endpoints with an App Engine backend
+  version: 1.0.0
+host: endpoints-runtime-serverless-g7vn673b6q-an.a.run.app
+schemes:
+  - https
+produces:
+  - application/json
+x-google-backend:
+  address: https://api-dot-soilworks-expt-01-266813.appspot.com
+  jwt_audience: 580669126921-um0j3d4nfqf0o5ogg7a0phgstmck7fql.apps.googleusercontent.com
+paths:
+  /guest:
+    get:
+      summary: Top page
+      operationId: root
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+  /api:
+    get:
+      security:
+        - firebase: []
+      summary: Api
+      operationId: api
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+  /cloudtasks:
+    post:
+      security:
+        - service_account_appengine: []
+      summary: CloudTasks endpoint
+      operationId: cloudtasks
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+securityDefinitions:
+  firebase:
+    authorizationUrl: ""
+    flow: "implicit"
+    type: "oauth2"
+    # Replace YOUR-PROJECT-ID with your project ID
+    x-google-issuer: "https://securetoken.google.com/soilworks-expt-01-266813"
+    x-google-jwks_uri: "https://www.googleapis.com/service_accounts/v1/metadata/x509/securetoken@system.gserviceaccount.com"
+    x-google-audiences: "soilworks-expt-01-266813"
+  service_account_appengine:  # this is for the authentication for a request from cloud tasks.
+    authorizationUrl: ""
+    flow: "implicit"
+    type: "oauth2"
+    x-google-issuer: "https://accounts.google.com"  # why this value? see https://wiki.mercari.in/user/hirotana/memo/2020/02/12/cloud%20tasks%E3%81%8B%E3%82%89%E3%81%AEHTTP%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%82%92Cloud%20Endpoints%E3%81%A7%E8%AA%8D%E8%A8%BC%E3%81%99%E3%82%8B
+    x-google-jwks_uri: "https://www.googleapis.com/oauth2/v3/certs"
+#    x-google-issuer: "soilworks-expt-01-266813@appspot.gserviceaccount.com"
+#    x-google-jwks_uri: "https://www.googleapis.com/robot/v1/metadata/x509/soilworks-expt-01-266813@appspot.gserviceaccount.com"
+
