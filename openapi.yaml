@@ -11,7 +11,7 @@ produces:
 x-google-backend:
   address: https://api-dot-docup-269111.appspot.com
   jwt_audience: 965242496332-f1epc5enp7ji73e6hrq0dphc5sshlmqj.apps.googleusercontent.com
-x-google-endpoints:
+x-google-endpoints: # passthru cors. See https://cloud.google.com/endpoints/docs/openapi/openapi-extensions?hl=ja#configuring_to_allow_cors_requests
   - name: docup-endpoint-em2dgo5qcq-an.a.run.app
     allowCors: True
 paths:
